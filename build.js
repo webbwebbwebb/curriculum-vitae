@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 const CONTENT_PLACEHOLDER = '[!!CONTENT_HERE!!]';
 const SOURCE_DIRECTORY = 'src/';
-const OUTPUT_DIRECTORY = 'dest/';
+const OUTPUT_DIRECTORY = 'dist/';
 const OUTPUT_PATH = OUTPUT_DIRECTORY + 'index.html';
 
 fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {

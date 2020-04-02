@@ -1,0 +1,22 @@
+{
+  "name": "curriculum-vitae",
+  "version": "1.0.0",
+  "description": "CV generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mark-webb@bitbucket.org/mark-webb/curriculum-vitae.git"
+  },
+  "keywords": [
+    "CV",
+    "Curriculum",
+    "Vitae",
+    "Resume"
+  ],
+  "author": "Mark Webb",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/mark-webb/curriculum-vitae#readme"
+}

@@ -5,6 +5,11 @@
 	display: none;
 }
 @media print {	
+
+	html {
+		zoom: 0.65
+	}
+
 	.print-break {
 		display: block;
 		page-break-before: always;
@@ -34,7 +39,6 @@ body {
 	font: 1.3em "Vollkorn", Palatino, Times;
 	color: #333;
 	line-height: 1.4;
-	/*text-align: justify;*/
 	}
 header, nav, article, footer {
 	width: 700px;

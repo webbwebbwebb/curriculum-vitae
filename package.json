@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js"
+    "build": "node build.js",
+    "serve": "http-server ./dist -c-1 -p 8081"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "fs-extra": "^9.0.0",
     "html-pdf": "^2.2.0",
+    "http-server": "^0.12.1",
     "marked": "^0.8.2"
   }
 }

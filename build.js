@@ -56,7 +56,7 @@ fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
                     fs.copy(SOURCE_DIRECTORY + 'assets', OUTPUT_DIRECTORY + 'assets', err => {
                         if (err) return console.error(err);
 
-                        fs.copy(SOURCE_DIRECTORY + 'assets/favicon/favicon.ico', OUTPUT_DIRECTORY + 'favicon.ico', err => {
+                        fs.copy(SOURCE_DIRECTORY + 'assets/icons/favicon/favicon.ico', OUTPUT_DIRECTORY + 'favicon.ico', err => {
                             if (err) return console.error(err);
 
                             console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');

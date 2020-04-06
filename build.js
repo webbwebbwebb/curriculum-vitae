@@ -15,7 +15,7 @@ function createPDF(html) {
     if(process.platform === 'linux') {
         /* building the PDF version on linux requires locally installed fonts and different scaling */
         htmlWithAbsolutePaths = htmlWithAbsolutePaths
-        .replace('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic&subset=latin">', '')
+        .replace('<link rel="stylesheet" href="/assets/fonts.css">', '')
         .replace('assets/print.css', 'assets/print-pdf.css');
     }
 
@@ -32,7 +32,7 @@ function createPDF(html) {
 
     pdf.create(htmlWithAbsolutePaths, pdfOptions).toFile(OUTPUT_DIRECTORY + 'mjwcv.pdf', function(err, res) {
         if (err) return console.error(err);
-        
+
         console.log('saved PDF to ' + res.filename);
     });
 }

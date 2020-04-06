@@ -63,8 +63,9 @@ a[download] {
 	font-size: 1em;
 }
 
-.red {
-	color: red;
+a[download] img {
+	width: 1em;
+	height: 1em;
 }
 
 

@@ -1,6 +1,6 @@
 /*adapted from http://jasonm23.github.io/markdown-css-themes/*/
 
-@font-face {
+/* @font-face {
 	font-family: 'Vollkorn';
 	font-style: normal;
 	font-weight: 400;
@@ -26,7 +26,7 @@
 	font-style: italic;
 	font-weight: 700;
 	src: local('Vollkorn Bold Italic'), local('Vollkorn-BoldItalic'), url('fonts/Vollkorn-BoldItalic.ttf') format('truetype');
-}
+} */
 
 .print-break {
 	display: none;
@@ -63,7 +63,9 @@ html, body {
         background:#fefefe;
 	}
 body {
-	font: 1.3em "Vollkorn", Palatino, Times;
+	font-family: "Vollkorn";
+	/* font-size: ;
+	font: 1.3em "Vollkorn", Palatino, Times; */
 	color: #333;
 	line-height: 1.4;
 	}

@@ -1,33 +1,5 @@
 /*adapted from http://jasonm23.github.io/markdown-css-themes/*/
 
-/* @font-face {
-	font-family: 'Vollkorn';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url('fonts/Vollkorn-Regular.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Vollkorn';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Vollkorn Bold'), local('Vollkorn-Bold'), url('fonts/Vollkorn-Bold.ttf') format('truetype');
-  }
-
-@font-face {
-	font-family: 'Vollkorn';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Vollkorn Italic'), local('Vollkorn-Italic'), url('fonts/Vollkorn-Italic.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Vollkorn';
-	font-style: italic;
-	font-weight: 700;
-	src: local('Vollkorn Bold Italic'), local('Vollkorn-BoldItalic'), url('fonts/Vollkorn-BoldItalic.ttf') format('truetype');
-} */
-
 .print-break {
 	display: none;
 }
@@ -59,13 +31,11 @@ table, th, td {
 html, body {
         padding:1em;
         margin:auto;
-        /*max-width:55em;*/
         background:#fefefe;
 	}
 body {
-	font-family: "Vollkorn";
-	/* font-size: ;
-	font: 1.3em "Vollkorn", Palatino, Times; */
+	font-family: "Vollkorn", Palatino, Times;
+	font-size: 1.3em;
 	color: #333;
 	line-height: 1.4;
 	}

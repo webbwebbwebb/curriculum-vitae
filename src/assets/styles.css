@@ -4,28 +4,28 @@
 	font-family: 'Vollkorn';
 	font-style: normal;
 	font-weight: 400;
-	src: url('fonts/Vollkorn-Regular.ttf') format('truetype');
+	src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url('fonts/Vollkorn-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Vollkorn';
 	font-style: normal;
 	font-weight: 700;
-	src: url('fonts/Vollkorn-Bold.ttf') format('truetype');
+	src: local('Vollkorn Bold'), local('Vollkorn-Bold'), url('fonts/Vollkorn-Bold.ttf') format('truetype');
   }
 
 @font-face {
 	font-family: 'Vollkorn';
 	font-style: italic;
 	font-weight: 400;
-	src: url('fonts/Vollkorn-Italic.ttf') format('truetype');
+	src: local('Vollkorn Italic'), local('Vollkorn-Italic'), url('fonts/Vollkorn-Italic.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Vollkorn';
 	font-style: italic;
 	font-weight: 700;
-	src: url('fonts/Vollkorn-BoldItalic.ttf') format('truetype');
+	src: local('Vollkorn Bold Italic'), local('Vollkorn-BoldItalic'), url('fonts/Vollkorn-BoldItalic.ttf') format('truetype');
 }
 
 .print-break {

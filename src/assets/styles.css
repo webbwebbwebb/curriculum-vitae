@@ -56,6 +56,18 @@ nav p {
 	margin: 0;
 }
 
+a[download] {
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	font-size: 1em;
+}
+
+.red {
+	color: red;
+}
+
+
 /* Typography
 -------------------------------------------------------- */
 
@@ -131,14 +143,6 @@ hr {
 	border-left: 0;
 	border-right: 0;
 }
-
-/* Home Page
---------------------------- */
-
-body#index li {
-	margin-bottom: 1em;
-}
-
 
 /* iPad
 -------------------------------------------------------- */

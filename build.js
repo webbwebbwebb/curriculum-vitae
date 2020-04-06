@@ -28,11 +28,17 @@ fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
                     } 
                   
                     console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
-                    
+
                     var htmlWithAbsolutePaths = outputHTML
-                        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'))
-                        .replace('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic&subset=latin">', '');
-                        
+                        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+
+                    if(process.platform === 'linux') {
+                        /* building the PDF version on linux requires locally installed fonts and different scaling */
+                        htmlWithAbsolutePaths = htmlWithAbsolutePaths
+                        .replace('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic&subset=latin">', '')
+                        .replace('assets/print.css', 'assets/print-pdf.css');
+                    }
+
                     var pdfOptions = { 
                         format: 'A4',
                         orientation: 'portrait',

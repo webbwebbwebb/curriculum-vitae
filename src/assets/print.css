@@ -1,0 +1,16 @@
+
+.print-break {
+	display: none;
+}
+
+@media print {	
+
+	html {
+		zoom: 0.9
+	}
+
+	.print-break {
+		display: block;
+		page-break-before: always;
+	}
+}

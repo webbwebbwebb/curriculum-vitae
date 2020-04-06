@@ -1,20 +1,5 @@
 /*adapted from http://jasonm23.github.io/markdown-css-themes/*/
 
-.print-break {
-	display: none;
-}
-@media print {	
-
-	html {
-		zoom: 0.9
-	}
-
-	.print-break {
-		display: block;
-		page-break-before: always;
-	}
-}
-
 img {
 	max-width: 100%;
 }

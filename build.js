@@ -31,9 +31,8 @@ function createPDF(html) {
     };
 
     pdf.create(htmlWithAbsolutePaths, pdfOptions).toFile(OUTPUT_DIRECTORY + 'mjwcv.pdf', function(err, res) {
-        if (err) { 
-            return console.log(err);
-        }
+        if (err) return console.error(err);
+        
         console.log('saved PDF to ' + res.filename);
     });
 }
@@ -44,32 +43,29 @@ fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
         const outputHTML = template.replace(CONTENT_PLACEHOLDER, content);
 
         fs.remove(OUTPUT_DIRECTORY, err => {
-            if (err) {
-                return console.error(err);
-            }
+            if (err) return console.error(err);
 
             fs.ensureDir(OUTPUT_DIRECTORY, err => {
-                if(err) {
-                    return console.error(err);
-                }
+                if (err) return console.error(err);
+
                 fs.writeFile(OUTPUT_PATH, outputHTML, (err) => {
-                    if (err) {
-                        return console.error(err);
-                    }
+                    if (err) return console.error(err);
+
                     console.log('saved ' + OUTPUT_PATH);
     
                     fs.copy(SOURCE_DIRECTORY + 'assets', OUTPUT_DIRECTORY + 'assets', err => {
-                        if (err) {
-                            return console.error(err);
-                        } 
-                      
-                        console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
+                        if (err) return console.error(err);
+
+                        fs.copy(SOURCE_DIRECTORY + 'assets/favicon/favicon.ico', OUTPUT_DIRECTORY + 'favicon.ico', err => {
+                            if (err) return console.error(err);
+
+                            console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
     
-                        createPDF(outputHTML);
+                            createPDF(outputHTML);
+                        });
                     });
                 });
             });
-          
         });
     });
 });

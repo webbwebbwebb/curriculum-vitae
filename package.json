@@ -1,7 +1,7 @@
 {
   "name": "curriculum-vitae",
   "version": "1.0.0",
-  "description": "CV generator",
+  "description": "Generate HTML and PDF copies of my resume using Markdown",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://mark-webb@bitbucket.org/mark-webb/curriculum-vitae.git"
+    "url": "git+https://github.com/webbwebbwebb/curriculum-vitae.git"
   },
   "keywords": [
     "CV",
@@ -19,8 +19,8 @@
     "Resume"
   ],
   "author": "Mark Webb",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/mark-webb/curriculum-vitae#readme",
+  "license": "MIT",
+  "homepage": "https://github.com/webbwebbwebb/curriculum-vitae",
   "devDependencies": {
     "fs-extra": "^9.0.0",
     "html-pdf": "^2.2.0",

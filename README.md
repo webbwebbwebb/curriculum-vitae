@@ -12,12 +12,18 @@ Node v10.16.0 or later
 ## Build
 ```
 npm install
-npm run-script build
+npm run build
 ```
 
 ## Serve
 (Assuming a successful build)
 ```
-npm run-script serve
+npm run serve
 ```
 then browse to http://localhost:8081
+
+## Dev
+The dev command will serve the site while watching for changes in the src directory
+```
+npm run dev
+```

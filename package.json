@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "serve": "http-server ./dist -c-1 -p 8081"
+    "serve": "http-server ./dist -c-1 -p 8081",
+    "watch": "npm-watch",
+    "dev": "concurrently -k npm:serve npm:watch"
+  },
+  "watch": {
+    "build": "src/**/*.*"
   },
   "repository": {
     "type": "git",
@@ -22,9 +27,11 @@
   "license": "MIT",
   "homepage": "https://github.com/webbwebbwebb/curriculum-vitae",
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "fs-extra": "^9.0.0",
     "html-pdf": "^2.2.0",
     "http-server": "^0.12.1",
-    "marked": "^0.8.2"
+    "marked": "^0.8.2",
+    "npm-watch": "^0.6.0"
   }
 }

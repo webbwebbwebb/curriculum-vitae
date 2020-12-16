@@ -2,7 +2,7 @@
 # Mark Webb &ndash; Consultant Software Developer
 - Full stack engineer specialising in Microsoft technologies.
 - Certified Scrum Master with real-world experience.
-- 8 years proven track record as a contract resource.
+- 9 years proven track record as a contract resource.
 - Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
 
 ## Skills / Tools
@@ -10,25 +10,19 @@
 *C#, SQL, JavaScript, TypeScript, CSS, HTML*
 
 **Technologies**  
-*Azure, Entity Framework, NUnit, Moq, SignalR, WCF, Web API*  
-*Angular, Bootstrap, Jasmine, jQuery*  
-*Git, SVN, Jenkins, TeamCity, Visual Studio Online*  
+*Azure, Web API, WCF, Entity Framework*  
+*React, Angular, jQuery*  
+*Git, Visual Studio Online, Jenkins, TeamCity*  
 
 **Methodologies**  
 *Agile, Scrum, Test Driven Development, Continuous Integration*
 
-## Qualifications
-
-**BSc (Hons) 2:1 Computer Science and Software Engineering**  
-*July 2003, The University of Birmingham, Birmingham, UK*  
-
-**ScrumAlliance Certified Scrum Master**  
-*October 2008*  
-
-**Microsoft Certified Professional Developer**  
-*September 2009*  
-
 ## Experience
+
+**Mylo Limited, London, UK**  
+*August 2020 &ndash; Present (Consultant Software Developer)*
+- Contracted for initial build of a multi-platform project management app targeting the Construction Industry
+- React, Web API, Entity Framework, Azure
 
 **ELMS Aviation Ltd, Exeter, UK**  
 *August 2016 &ndash; Present (Consultant Software Developer)*  
@@ -42,14 +36,12 @@
 - Application is an SEO performance tracker, enabling the visualisation and reporting of Google search results over time.
 - Angular 8, Web API, Entity Framework, Azure Functions, Stripe Payment integration.
 
-
-<h2 class="print-break">Experience cont.</h2>
-
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  
 - Replatformed existing mainframe applications onto modern Microsoft technology stack.
 - Architected and built optimised batch processes using message queues, multi-threading and database sharding.
-- Angular 8, Web API, Entity Framework, SQL Server, MSMQ.
+
+<h2 class="print-break">Experience cont.</h2>
 
 **Trace One Limited, St Albans, UK**  
 *April 2015 &ndash; April 2016 (Contract Senior Developer)*  
@@ -75,3 +67,14 @@
 
 **Spicers Limited, Cambridge, UK**  
 *March 2004 &ndash; April 2008 (Systems Developer)*
+
+## Qualifications
+
+**BSc (Hons) 2:1 Computer Science and Software Engineering**  
+*July 2003, The University of Birmingham, Birmingham, UK*  
+
+**ScrumAlliance Certified Scrum Master**  
+*October 2008*  
+
+**Microsoft Certified Professional Developer**  
+*September 2009*  

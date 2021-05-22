@@ -20,6 +20,7 @@ function createPDF(html) {
     }
 
     var pdfOptions = { 
+        localUrlAccess: true,
         format: 'A4',
         orientation: 'portrait',
         border: {

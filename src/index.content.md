@@ -5,12 +5,12 @@
 - 9 years proven track record as a contract resource.
 - Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
 
-## Skills / Tools
+## Skills
 **Programming Languages**  
-*C#, SQL, JavaScript, TypeScript, CSS, HTML*
+*C#, TypeScript, SQL, HTML*
 
 **Technologies**  
-*Azure, Web API, WCF, Entity Framework*  
+*.NET Core, Web API, WCF, Entity Framework*  
 *React, Angular, jQuery*  
 *Git, Visual Studio Online, Jenkins, TeamCity*  
 
@@ -22,10 +22,10 @@
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; Present (Consultant Software Developer)*
 - Contracted for initial build of a multi-platform project management app targeting the Construction Industry
-- React, Web API, Entity Framework, Azure
+- React, Web API, Entity Framework, Docker, Kubernetes
 
 **ELMS Aviation Ltd, Exeter, UK**  
-*August 2016 &ndash; Present (Consultant Software Developer)*  
+*August 2016 &ndash; September 2020 (Consultant Software Developer)*  
 - Ongoing development of the ELMS Aviation maintenance and compliance application. 
 - High availabilty web application enabling Aircraft engineers to record their qualifications and maintenance tasks, and Aviation companies to demonstrate their regulatory compliance.
 - AngularJS, Web API, Entity Framework, Azure SQL Graph DB.

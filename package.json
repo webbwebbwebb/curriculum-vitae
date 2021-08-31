@@ -33,5 +33,9 @@
     "http-server": "^0.12.3",
     "marked": "^0.8.2",
     "npm-watch": "^0.6.0"
+  },
+  "dependencies": {
+    "dist-exiftool": "^10.53.0",
+    "node-exiftool": "^2.3.0"
   }
 }

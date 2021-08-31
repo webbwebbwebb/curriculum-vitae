@@ -2,6 +2,8 @@ const pdf = require('html-pdf');
 const path = require('path');
 const marked = require('marked');
 const fs = require('fs-extra');
+const exiftool = require('node-exiftool');
+const exiftoolBinary = require('dist-exiftool');
 
 const CONTENT_PLACEHOLDER = '[!!CONTENT_HERE!!]';
 const SOURCE_DIRECTORY = 'src/';
@@ -35,7 +37,24 @@ function createPDF(html) {
         if (err) return console.error(err);
 
         console.log('saved PDF to ' + res.filename);
+
+        const pdfMetadata = {
+            Title: 'Curriculum Vitae',
+            Author: 'Mark Webb'
+        }
+
+        updateMetadata(res.filename, pdfMetadata);
     });
+}
+
+function updateMetadata(filePath, metadata) {
+    const ep = new exiftool.ExiftoolProcess(exiftoolBinary);
+    ep
+        .open()
+        .then(() => ep.writeMetadata(filePath, metadata, ['overwrite_original', 'codedcharacterset=utf8']))
+        .then(() => console.log(`updated metadata for ${filePath}`))
+        .then(() => ep.close())
+        .catch(console.error);
 }
 
 fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {

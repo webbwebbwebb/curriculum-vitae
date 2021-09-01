@@ -8,7 +8,26 @@ const exiftoolBinary = require('dist-exiftool');
 const CONTENT_PLACEHOLDER = '[!!CONTENT_HERE!!]';
 const SOURCE_DIRECTORY = 'src/';
 const OUTPUT_DIRECTORY = 'dist/';
-const OUTPUT_PATH = OUTPUT_DIRECTORY + 'index.html';
+const HTML_OUTPUT_PATH = OUTPUT_DIRECTORY + 'index.html';
+
+const PDF_OUTPUT_PATH = OUTPUT_DIRECTORY + 'mjwcv.pdf';
+const PDF_OPTIONS = { 
+    localUrlAccess: true,
+    format: 'A4',
+    orientation: 'portrait',
+    border: {
+        top: '1cm',
+        right: '1cm',
+        bottom: '1cm',
+        left: '1cm'
+        }
+};
+const PDF_METADATA = {
+    Title: 'Curriculum Vitae - Mark Webb',
+    Author: 'Mark Webb (mark@summerhousesoftware.co.uk)',
+    Subject: 'An overview of Mark\'s skills, experience and education',
+    Keywords: 'contract, cv, developer, resume, software, work'
+}
 
 function createPDF(html) {
     var htmlWithAbsolutePaths = html
@@ -21,39 +40,22 @@ function createPDF(html) {
         .replace('assets/print.css', 'assets/print-pdf.css');
     }
 
-    var pdfOptions = { 
-        localUrlAccess: true,
-        format: 'A4',
-        orientation: 'portrait',
-        border: {
-            top: '1cm',
-            right: '1cm',
-            bottom: '1cm',
-            left: '1cm'
-            }
-    };
-
-    pdf.create(htmlWithAbsolutePaths, pdfOptions).toFile(OUTPUT_DIRECTORY + 'mjwcv.pdf', function(err, res) {
+    pdf.create(htmlWithAbsolutePaths, PDF_OPTIONS).toFile(PDF_OUTPUT_PATH, function(err, res) {
         if (err) return console.error(err);
 
         console.log('saved PDF to ' + res.filename);
 
-        const pdfMetadata = {
-            Title: 'Curriculum Vitae',
-            Author: 'Mark Webb'
-        }
-
-        updateMetadata(res.filename, pdfMetadata);
+        updateMetadata(res.filename, PDF_METADATA);
     });
 }
 
 function updateMetadata(filePath, metadata) {
-    const ep = new exiftool.ExiftoolProcess(exiftoolBinary);
-    ep
+    const exiftoolProcess = new exiftool.ExiftoolProcess(exiftoolBinary);
+    exiftoolProcess
         .open()
-        .then(() => ep.writeMetadata(filePath, metadata, ['overwrite_original', 'codedcharacterset=utf8']))
+        .then(() => exiftoolProcess.writeMetadata(filePath, metadata, ['overwrite_original', 'codedcharacterset=utf8']))
         .then(() => console.log(`updated metadata for ${filePath}`))
-        .then(() => ep.close())
+        .then(() => exiftoolProcess.close())
         .catch(console.error);
 }
 
@@ -68,10 +70,10 @@ fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
             fs.ensureDir(OUTPUT_DIRECTORY, err => {
                 if (err) return console.error(err);
 
-                fs.writeFile(OUTPUT_PATH, outputHTML, (err) => {
+                fs.writeFile(HTML_OUTPUT_PATH, outputHTML, (err) => {
                     if (err) return console.error(err);
 
-                    console.log('saved ' + OUTPUT_PATH);
+                    console.log('saved ' + HTML_OUTPUT_PATH);
     
                     fs.copy(SOURCE_DIRECTORY + 'assets', OUTPUT_DIRECTORY + 'assets', err => {
                         if (err) return console.error(err);

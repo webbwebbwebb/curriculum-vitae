@@ -4,7 +4,7 @@ This project is how I maintain my CV.
 I edit the content in Markdown format, then use the build script to generate HTML and PDF copies of my resume.
 
 The latest is hosted at https://webbwebbwebb.co.uk/
-![screenshot of CV on webbwebbwebb.co.uk](screenshot.png?raw=true)
+<img src="screenshot.png?raw=true" alt="screenshot of CV on webbwebbwebb.co.uk" width=800>
 
 ## Requirements
 Node v10.16.0 or later

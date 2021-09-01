@@ -6,13 +6,13 @@
 - Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
 
 ## Skills
-**Programming Languages**  
-*C#, TypeScript, SQL, HTML*
-
 **Technologies**  
 *.NET Core, Web API, WCF, Entity Framework*  
-*React, Angular, jQuery*  
+*React, Angular, Azure*  
 *Git, Visual Studio Online, Jenkins, TeamCity*  
+
+**Programming Languages**  
+*C#, TypeScript, SQL*
 
 **Methodologies**  
 *Agile, Scrum, Test Driven Development, Continuous Integration*
@@ -21,25 +21,25 @@
 
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; Present (Consultant Software Developer)*
-- Contracted for initial build of a multi-platform project management app targeting the Construction Industry
-- React, Web API, Entity Framework, Docker, Kubernetes
+- Initial build of a multi-platform project management app targeting the Construction Industry
+- React, .NET Core, Web API, Entity Framework, Docker, Kubernetes, Azure Service Bus
+
+**SERPSketch Ltd, Dorset, UK**  
+*July 2019 &ndash; December 2019 (Consultant Software Developer)*  
+- Contracted to complete the initial build of a web application for a start-up.  
+- SEO performance tracker, enabling the visualisation and reporting of Google search results over time.
+- Angular 8, Web API, Entity Framework, Azure Functions, Stripe Payment integration.
 
 **ELMS Aviation Ltd, Exeter, UK**  
 *August 2016 &ndash; September 2020 (Consultant Software Developer)*  
 - Ongoing development of the ELMS Aviation maintenance and compliance application. 
 - High availabilty web application enabling Aircraft engineers to record their qualifications and maintenance tasks, and Aviation companies to demonstrate their regulatory compliance.
-- AngularJS, Web API, Entity Framework, Azure SQL Graph DB.
-
-**SERPSketch Ltd, Dorset, UK**  
-*July 2019 &ndash; December 2019 (Consultant Software Developer)*  
-- Contracted to complete initial build of a web application for a start-up company.  
-- Application is an SEO performance tracker, enabling the visualisation and reporting of Google search results over time.
-- Angular 8, Web API, Entity Framework, Azure Functions, Stripe Payment integration.
+- Angular, .NET, Web API, Entity Framework, Azure SQL Graph DB.
 
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  
 - Replatformed existing mainframe applications onto modern Microsoft technology stack.
-- Architected and built optimised batch processes using message queues, multi-threading and database sharding.
+- Architected and built optimised batch processes using multi-threading and database sharding.
 
 <h2 class="print-break">Experience cont.</h2>
 

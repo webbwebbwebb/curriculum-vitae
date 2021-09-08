@@ -7,28 +7,28 @@
 
 ## Skills
 **Technologies**  
-*.NET Core, Web API, WCF, Entity Framework*  
+*.NET Core, Web API, WCF, EF Core*  
 *React, Angular, Azure*  
-*Git, Visual Studio Online, Jenkins, TeamCity*  
+*Git, Azure Dev Ops, Jenkins, TeamCity*  
 
 **Programming Languages**  
 *C#, TypeScript, SQL*
 
 **Methodologies**  
-*Agile, Scrum, Test Driven Development, Continuous Integration*
+*Agile, Scrum, Test Driven Development, Continuous Integration, Domain Driven Design*
 
 ## Experience
 
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; Present (Consultant Software Developer)*
 - Initial build of a multi-platform project management app targeting the Construction Industry
-- React, .NET Core, Web API, Entity Framework, Docker, Kubernetes, Azure Service Bus
+- React, .NET Core, Web API, EF Core, Docker, Kubernetes, Azure Service Bus
 
 **SERPSketch Ltd, Dorset, UK**  
 *July 2019 &ndash; December 2019 (Consultant Software Developer)*  
 - Contracted to complete the initial build of a web application for a start-up.  
 - SEO performance tracker, enabling the visualisation and reporting of Google search results over time.
-- Angular 8, Web API, Entity Framework, Azure Functions, Stripe Payment integration.
+- Angular 8, .NET Core, Web API, EF Core, Azure Functions, Stripe Payment integration.
 
 **ELMS Aviation Ltd, Exeter, UK**  
 *August 2016 &ndash; September 2020 (Consultant Software Developer)*  
@@ -47,7 +47,7 @@
 *April 2015 &ndash; April 2016 (Contract Senior Developer)*  
 - Contracted to define an architectural and technical strategy to move Trace One’s legacy products to a modern, modular, flexible platform.
 - Subsequently contracted to build the new platform and provide developer training.
-- EventStore, NServiceBus, NancyFX, AngularJS.
+- Domain Driven Design, EventStore, NServiceBus, NancyFX, AngularJS.
 
 **The Open University, Milton Keynes, UK**  
 *April 2013 &ndash; April 2015 (Contract Lead Developer)*  
@@ -64,6 +64,8 @@
 **Cambridge Assessment, Cambridge, UK**  
 *July 2010 &ndash; December 2011 (Principal Developer)*  
 *May 2008 &ndash; July 2010 (Senior Developer)*
+- Lead developer on high profile project to migrate the A-level grading system from Oracle to .NET
+- .NET, ASP.NET MVC, Domain Driven Design, MSMQ
 
 **Spicers Limited, Cambridge, UK**  
 *March 2004 &ndash; April 2008 (Systems Developer)*

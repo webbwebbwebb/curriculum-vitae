@@ -18,7 +18,7 @@ const PDF_OPTIONS = {
     border: {
         top: '1cm',
         right: '1cm',
-        bottom: '1cm',
+        bottom: 0,
         left: '1cm'
         }
 };

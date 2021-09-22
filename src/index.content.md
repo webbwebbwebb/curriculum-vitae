@@ -20,7 +20,7 @@
 ## Experience
 
 **Mylo Limited, London, UK**  
-*August 2020 &ndash; Present (Consultant Software Developer)*
+*August 2020 &ndash; September 2021 (Consultant Software Developer)*
 - Initial build of a multi-platform project management app targeting the Construction Industry
 - React, .NET Core, Web API, EF Core, Docker, Kubernetes, Azure Service Bus
 

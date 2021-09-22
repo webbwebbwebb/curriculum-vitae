@@ -1,15 +1,13 @@
 [mark@summerhousesoftware.co.uk](mailto:mark@summerhousesoftware.co.uk)
 # Mark Webb &ndash; Consultant Software Developer
 - Full stack engineer specialising in Microsoft technologies.
-- Certified Scrum Master with real-world experience.
 - 9 years proven track record as a contract resource.
 - Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
 
 ## Skills
 **Technologies**  
-*.NET Core, Web API, WCF, EF Core*  
-*React, Angular, Azure*  
-*Git, Azure Dev Ops, Jenkins, TeamCity*  
+*.NET Core, Web API, WCF, EF Core, React, Angular, Azure*  
+*Azure Dev Ops, Git, Jenkins, TeamCity*  
 
 **Programming Languages**  
 *C#, TypeScript, SQL*
@@ -27,7 +25,7 @@
 **SERPSketch Ltd, Dorset, UK**  
 *July 2019 &ndash; December 2019 (Consultant Software Developer)*  
 - Contracted to complete the initial build of a web application for a start-up.  
-- SEO performance tracker, enabling the visualisation and reporting of Google search results over time.
+- SEO performance tracker, enabling the visualisation and reporting of search results over time.
 - Angular 8, .NET Core, Web API, EF Core, Azure Functions, Stripe Payment integration.
 
 **ELMS Aviation Ltd, Exeter, UK**  

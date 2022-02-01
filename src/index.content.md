@@ -1,12 +1,12 @@
 [mark@summerhousesoftware.co.uk](mailto:mark@summerhousesoftware.co.uk)
 # Mark Webb &ndash; Consultant Software Developer
 - Full stack engineer specialising in Microsoft technologies.
-- 9 years proven track record as a contract resource.
+- Proven track record as a contract resource.
 - Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
 
 ## Skills
 **Technologies**  
-*.NET Core, Web API, WCF, EF Core, React, Angular, Azure*  
+*.NET, Web API, WCF, EF Core, React, Angular, Azure*  
 *Azure Dev Ops, Git, Jenkins, TeamCity*  
 
 **Programming Languages**  
@@ -16,9 +16,13 @@
 *Agile, Scrum, Test Driven Development, Continuous Integration, Domain Driven Design*
 
 ## Experience
+**Derivco International, London, UK**  
+*October 2021 &ndash; present (Contract Senior Developer)*
+- Contracted to build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
+- .NET 6, Azure functions, Azure Event Hubs, ARM
 
 **Mylo Limited, London, UK**  
-*August 2020 &ndash; September 2021 (Consultant Software Developer)*
+*August 2020 &ndash; September 2021 (Contract Lead Developer)*
 - Initial build of a multi-platform project management app targeting the Construction Industry
 - React, .NET Core, Web API, EF Core, Docker, Kubernetes, Azure Service Bus
 
@@ -31,15 +35,14 @@
 **ELMS Aviation Ltd, Exeter, UK**  
 *August 2016 &ndash; September 2020 (Consultant Software Developer)*  
 - Ongoing development of the ELMS Aviation maintenance and compliance application. 
-- High availabilty web application enabling Aircraft engineers to record their qualifications and maintenance tasks, and Aviation companies to demonstrate their regulatory compliance.
 - Angular, .NET, Web API, Entity Framework, Azure SQL Graph DB.
+
+<h2 class="print-break">Experience cont.</h2>
 
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  
 - Replatformed existing mainframe applications onto modern Microsoft technology stack.
 - Architected and built optimised batch processes using multi-threading and database sharding.
-
-<h2 class="print-break">Experience cont.</h2>
 
 **Trace One Limited, St Albans, UK**  
 *April 2015 &ndash; April 2016 (Contract Senior Developer)*  
@@ -62,8 +65,6 @@
 **Cambridge Assessment, Cambridge, UK**  
 *July 2010 &ndash; December 2011 (Principal Developer)*  
 *May 2008 &ndash; July 2010 (Senior Developer)*
-- Lead developer on high profile project to migrate the A-level grading system from Oracle to .NET
-- .NET, ASP.NET MVC, Domain Driven Design, MSMQ
 
 **Spicers Limited, Cambridge, UK**  
 *March 2004 &ndash; April 2008 (Systems Developer)*
@@ -75,6 +76,3 @@
 
 **ScrumAlliance Certified Scrum Master**  
 *October 2008*  
-
-**Microsoft Certified Professional Developer**  
-*September 2009*  

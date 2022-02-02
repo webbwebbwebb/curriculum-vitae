@@ -1,6 +1,6 @@
 const pdf = require('html-pdf');
 const path = require('path');
-const marked = require('marked');
+const { marked } = require('marked');
 const fs = require('fs-extra');
 const exiftool = require('node-exiftool');
 const exiftoolBinary = require('dist-exiftool');

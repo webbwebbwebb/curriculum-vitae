@@ -31,8 +31,9 @@ const PDF_METADATA = {
 
 function createPDF(html) {
     var htmlWithAbsolutePaths = html
-        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+        .replace(/href="\/assets\//g, ('href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/')).replace(/\\/g, '/'));
 
+        console.log(htmlWithAbsolutePaths);
     if(process.platform === 'linux') {
         /* building the PDF version on linux requires locally installed fonts and different scaling */
         htmlWithAbsolutePaths = htmlWithAbsolutePaths
@@ -58,6 +59,15 @@ function updateMetadata(filePath, metadata) {
         .then(() => exiftoolProcess.close())
         .catch(console.error);
 }
+
+
+
+// fs.readFile(SOURCE_DIRECTORY + 'assets/fonts/vollkorn/Vollkorn-Regular.woff2', (err, data) => {
+//     if (err) return console.error(err);
+//     fs.writeFile(OUTPUT_DIRECTORY + 'Vollkorn-Regular.base64', data.toString('base64'), (err) => {
+//         if (err) return console.error(err);
+//     }); 
+// });
 
 fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
     const content = marked(data);

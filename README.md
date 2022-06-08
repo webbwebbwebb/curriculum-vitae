@@ -7,7 +7,7 @@ The latest is hosted at https://webbwebbwebb.co.uk/
 <img src="screenshot.png?raw=true" alt="screenshot of CV on webbwebbwebb.co.uk" width=800>
 
 ## Requirements
-Node v10.16.0 or later
+Node v12.3.0 or later (required by http-server)
 
 ## Build
 ```

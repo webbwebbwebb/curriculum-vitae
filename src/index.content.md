@@ -19,7 +19,7 @@
 **Derivco International, London, UK**  
 *October 2021 &ndash; present (Contract Senior Developer)*
 - Contracted to build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
-- .NET 6, Azure functions, Azure Event Hubs, ARM
+- .NET 6, React, Azure functions, Azure Event Hubs, Terraform
 
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; September 2021 (Contract Lead Developer)*

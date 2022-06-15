@@ -1,30 +1,33 @@
 [mark@summerhousesoftware.co.uk](mailto:mark@summerhousesoftware.co.uk)
 # Mark Webb &ndash; Consultant Software Developer
+- Experienced team leader, line manager and technical mentor to multi-disciplinary teams.
 - Full stack engineer specialising in Microsoft technologies.
 - Proven track record as a contract resource.
-- Experience working as team leader, line manager and technical mentor to multi-disciplinary teams.
+- Certified scrum master since 2008
 
 ## Skills
 **Technologies**  
-*.NET, Web API, WCF, EF Core, React, Angular, Azure*  
-*Azure Dev Ops, Git, Jenkins, TeamCity*  
+*React, Angular, .NET, Web API, WCF, EF Core*  
+*Azure, Git, Bicep, Terraform*  
 
 **Programming Languages**  
-*C#, TypeScript, SQL*
+*TypeScript, Javascript, C#, SQL*
 
 **Methodologies**  
-*Agile, Scrum, Test Driven Development, Continuous Integration, Domain Driven Design*
+*Agile, Scrum, Test Driven Development, Continuous Integration*
 
 ## Experience
 **Derivco International, London, UK**  
 *October 2021 &ndash; present (Contract Senior Developer)*
-- Contracted to build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
-- .NET 6, React, Azure functions, Azure Event Hubs, Terraform
+- Contracted to design and build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
+- Drove quality improvements by mentoring the team on unit testing, code analysis and SQL design.
+- React, .NET 6, Azure functions, Azure Event Hubs, Azure SQL, Terraform.
 
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; September 2021 (Contract Lead Developer)*
-- Initial build of a multi-platform project management app targeting the Construction Industry
-- React, .NET Core, Web API, EF Core, Docker, Kubernetes, Azure Service Bus
+- Design and build of a multi-platform project management app targeting the Construction Industry.
+- Responsible for setting architectural direction for two teams of developers working across Europe.
+- React, .NET Core, Microservices, EF Core, Docker, Kubernetes, Azure Service Bus, Storybook.
 
 **SERPSketch Ltd, Dorset, UK**  
 *July 2019 &ndash; December 2019 (Consultant Software Developer)*  
@@ -41,7 +44,7 @@
 
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  
-- Replatformed existing mainframe applications onto modern Microsoft technology stack.
+- Replatformed existing monolithic mainframe applications onto modern Microsoft technology stack.
 - Architected and built optimised batch processes using multi-threading and database sharding.
 
 **Trace One Limited, St Albans, UK**  

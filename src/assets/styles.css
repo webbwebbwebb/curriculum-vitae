@@ -61,6 +61,7 @@ h3 {
 
 p {
 	margin-top:0;
+	margin-bottom: 0.5em;
 	-webkit-hypens:auto;
 	-moz-hypens:auto;
 	hyphens:auto;
@@ -68,10 +69,12 @@ p {
 
 ul {
 	list-style: square;
+	margin-top: 0.5em;
 	padding-left:1.2em;
 }
 
 ol {
+	margin-top: 0.5em;
 	padding-left:1.2em;
 }
 

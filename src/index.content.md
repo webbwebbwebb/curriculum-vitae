@@ -1,5 +1,5 @@
 [mark@summerhousesoftware.co.uk](mailto:mark@summerhousesoftware.co.uk)
-# Mark Webb &ndash; Consultant Software Developer
+# Mark Webb &ndash; Software Consultant
 - Experienced team leader, line manager and technical mentor to multi-disciplinary teams.
 - Full stack engineer specialising in Microsoft technologies.
 - Proven track record as a contract resource.
@@ -40,7 +40,7 @@
 - Ongoing development of the ELMS Aviation maintenance and compliance application. 
 - Angular, .NET, Web API, Entity Framework, Azure SQL Graph DB.
 
-<h2 class="print-break">Experience cont.</h2>
+<h2 class="print-break">Exerience cont.</h2>
 
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  

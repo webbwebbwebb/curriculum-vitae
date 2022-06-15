@@ -29,17 +29,31 @@ const PDF_METADATA = {
     Keywords: 'contract, cv, developer, resume, software, work'
 }
 
+async function createFontsStylesheet(template) {
+    const fontDirectory = SOURCE_DIRECTORY + 'assets/fonts/vollkorn/'
+    const regular = await fs.readFile(fontDirectory + 'Vollkorn-Regular.ttf');
+    stylesheet = template.replace('[!!VOLLKHORN_REGULAR_DATA!!]', regular.toString('base64'));
+
+    const bold = await fs.readFile(fontDirectory + 'Vollkorn-Bold.ttf');
+    stylesheet = stylesheet.replace('[!!VOLLKHORN_BOLD_DATA!!]', bold.toString('base64'));
+
+    const italic = await fs.readFile(fontDirectory + 'Vollkorn-Italic.ttf');
+    stylesheet = stylesheet.replace('[!!VOLLKHORN_ITALIC_DATA!!]', italic.toString('base64'));
+
+    const boldItalic = await fs.readFile(fontDirectory + 'Vollkorn-BoldItalic.ttf');
+    stylesheet = stylesheet.replace('[!!VOLLKHORN_BOLD_ITALIC_DATA!!]', boldItalic.toString('base64'));
+
+    await fs.writeFile(OUTPUT_DIRECTORY + 'assets/fonts.css', stylesheet)
+}
+
 function createPDF(html) {
-    var htmlWithAbsolutePaths = html
+    var htmlWithAbsolutePaths = html;
+
+    htmlWithAbsolutePaths = htmlWithAbsolutePaths
+        //.replace('assets/print.css', 'assets/print-pdf.css')
         .replace(/href="\/assets\//g, ('href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/')).replace(/\\/g, '/'));
 
-        console.log(htmlWithAbsolutePaths);
-    if(process.platform === 'linux') {
-        /* building the PDF version on linux requires locally installed fonts and different scaling */
-        htmlWithAbsolutePaths = htmlWithAbsolutePaths
-        .replace('<link rel="stylesheet" href="/assets/fonts.css">', '')
-        .replace('assets/print.css', 'assets/print-pdf.css');
-    }
+    console.log(htmlWithAbsolutePaths);
 
     pdf.create(htmlWithAbsolutePaths, PDF_OPTIONS).toFile(PDF_OUTPUT_PATH, function(err, res) {
         if (err) return console.error(err);
@@ -59,15 +73,6 @@ function updateMetadata(filePath, metadata) {
         .then(() => exiftoolProcess.close())
         .catch(console.error);
 }
-
-
-
-// fs.readFile(SOURCE_DIRECTORY + 'assets/fonts/vollkorn/Vollkorn-Regular.woff2', (err, data) => {
-//     if (err) return console.error(err);
-//     fs.writeFile(OUTPUT_DIRECTORY + 'Vollkorn-Regular.base64', data.toString('base64'), (err) => {
-//         if (err) return console.error(err);
-//     }); 
-// });
 
 fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
     const content = marked(data);
@@ -92,8 +97,12 @@ fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
                             if (err) return console.error(err);
 
                             console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
-    
-                            createPDF(outputHTML);
+
+                            fs.readFile(SOURCE_DIRECTORY + 'fonts.template.css', 'utf8', (err, fontTemplate) => { 
+                                createFontsStylesheet(fontTemplate).then(() => {
+                                    createPDF(outputHTML);
+                                });
+                            });
                         });
                     });
                 });

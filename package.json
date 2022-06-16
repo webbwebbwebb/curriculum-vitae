@@ -28,7 +28,7 @@
   "homepage": "https://github.com/webbwebbwebb/curriculum-vitae",
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^10.1.0",
     "html-pdf": "^3.0.1",
     "http-server": "^14.1.1",
     "marked": "^4.0.10",

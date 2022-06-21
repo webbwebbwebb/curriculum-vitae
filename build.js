@@ -29,65 +29,94 @@ const PDF_METADATA = {
     Keywords: 'contract, cv, developer, resume, software, work'
 }
 
-function createPDF(html) {
-    var htmlWithAbsolutePaths = html
-        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+async function clean() {
+    console.log('cleaning output');
+    await fs.rm(OUTPUT_DIRECTORY, {recursive:true, force:true});
+    await fs.mkdir(OUTPUT_DIRECTORY);
+}
 
-    if(process.platform === 'linux') {
-        /* building the PDF version on linux requires locally installed fonts and different scaling */
-        htmlWithAbsolutePaths = htmlWithAbsolutePaths
-        .replace('<link rel="stylesheet" href="/assets/fonts.css">', '')
+async function generateHtml() {
+    console.log('generating HTML from markdown');
+    const markdownContent = await fs.readFile(SOURCE_DIRECTORY + 'index.content.md', {encoding:'utf8'});
+    const htmlContent = marked(markdownContent);
+    const htmlTemplate = await fs.readFile(SOURCE_DIRECTORY + 'index.template.html', {encoding:'utf8'});
+    const htmlOutput = htmlTemplate.replace(CONTENT_PLACEHOLDER, htmlContent);
+    await fs.writeFile(HTML_OUTPUT_PATH, htmlOutput);
+    console.log('saved ' + HTML_OUTPUT_PATH);
+}
+
+async function copyAssets(){
+    console.log('copying assets');
+    await fs.copy(SOURCE_DIRECTORY + 'assets', OUTPUT_DIRECTORY + 'assets');
+    await fs.copy(SOURCE_DIRECTORY + 'assets/icons/favicon/favicon.ico', OUTPUT_DIRECTORY + 'favicon.ico');
+    console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
+}
+
+async function generatePDF() {
+
+    await createPdfFontStyles();
+
+    let html = await fs.readFile(HTML_OUTPUT_PATH, {encoding:'utf8'})
+
+    let htmlWithAbsolutePaths = html
+        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'))
+        .replaceAll('/assets/fonts.css','/assets/fonts-pdf.css')
         .replace('assets/print.css', 'assets/print-pdf.css');
-    }
 
-    pdf.create(htmlWithAbsolutePaths, PDF_OPTIONS).toFile(PDF_OUTPUT_PATH, function(err, res) {
-        if (err) return console.error(err);
-
-        console.log('saved PDF to ' + res.filename);
-
-        updateMetadata(res.filename, PDF_METADATA);
+    const pdfResource = await new Promise((resolve, reject) => {
+        pdf.create(htmlWithAbsolutePaths, PDF_OPTIONS)
+           .toFile(PDF_OUTPUT_PATH, (err, res) => {
+               if(err) {
+                   reject(err);
+                } else {
+                    resolve(res);
+                }
+        })
     });
+
+    console.log('saved PDF to ' + pdfResource.filename);
+
+    await updateMetadata(pdfResource.filename, PDF_METADATA);
 }
 
-function updateMetadata(filePath, metadata) {
+async function createPdfFontStyles() {
+    const inputPath = path.join(SOURCE_DIRECTORY, 'assets', 'fonts.css');
+    const outputPath = path.join(OUTPUT_DIRECTORY, 'assets', 'fonts-pdf.css');
+
+    let fontStyles = await fs.readFile(inputPath, {encoding:'utf8'});
+
+    let fontStylesWithAbsolutePaths = fontStyles
+        .replace(/\/assets\//g, 'file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+
+    await fs.writeFile(outputPath, fontStylesWithAbsolutePaths);
+}
+
+async function updateMetadata(filePath, metadata) {
     const exiftoolProcess = new exiftool.ExiftoolProcess(exiftoolBinary);
-    exiftoolProcess
-        .open()
-        .then(() => exiftoolProcess.writeMetadata(filePath, metadata, ['overwrite_original', 'codedcharacterset=utf8']))
-        .then(() => console.log(`updated metadata for ${filePath}`))
-        .then(() => exiftoolProcess.close())
-        .catch(console.error);
+    await exiftoolProcess.open();
+    try {
+        await exiftoolProcess.writeMetadata(filePath, metadata, ['overwrite_original', 'codedcharacterset=utf8']);
+        console.log(`updated metadata for ${filePath}`);
+    } finally {
+        await exiftoolProcess.close();
+    }
 }
 
-fs.readFile(SOURCE_DIRECTORY + 'index.content.md', 'utf8', (err, data) => {
-    const content = marked(data);
-    fs.readFile(SOURCE_DIRECTORY + 'index.template.html', 'utf8', (err, template) => {
-        const outputHTML = template.replace(CONTENT_PLACEHOLDER, content);
-
-        fs.remove(OUTPUT_DIRECTORY, err => {
-            if (err) return console.error(err);
-
-            fs.ensureDir(OUTPUT_DIRECTORY, err => {
-                if (err) return console.error(err);
-
-                fs.writeFile(HTML_OUTPUT_PATH, outputHTML, (err) => {
-                    if (err) return console.error(err);
-
-                    console.log('saved ' + HTML_OUTPUT_PATH);
+async function build() {
     
-                    fs.copy(SOURCE_DIRECTORY + 'assets', OUTPUT_DIRECTORY + 'assets', err => {
-                        if (err) return console.error(err);
-
-                        fs.copy(SOURCE_DIRECTORY + 'assets/icons/favicon/favicon.ico', OUTPUT_DIRECTORY + 'favicon.ico', err => {
-                            if (err) return console.error(err);
-
-                            console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
+    await clean();
     
-                            createPDF(outputHTML);
-                        });
-                    });
-                });
-            });
-        });
-    });
-});
+    await generateHtml();
+
+    await copyAssets();
+
+    await generatePDF()
+}
+
+(async () => {
+    try{
+        await build();
+    } catch (ex) {
+        console.error(ex);
+    }
+})();

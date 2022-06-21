@@ -24,9 +24,8 @@
 - React, .NET 6, Azure functions, Azure Event Hubs, Azure SQL, Terraform.
 
 **Mylo Limited, London, UK**  
-*August 2020 &ndash; September 2021 (Contract Tech Lead)*
+*August 2020 &ndash; September 2021 (Contract Lead Developer)*
 - Design and build of a multi-platform project management app targeting the Construction Industry.
-- Responsible for setting architectural direction for two teams of developers working across Europe.
 - React, .NET Core, Microservices, EF Core, Docker, Kubernetes, Azure Service Bus, Storybook.
 
 **SERPSketch Ltd, Dorset, UK**  
@@ -40,7 +39,7 @@
 - Ongoing development of the ELMS Aviation maintenance and compliance application. 
 - Angular, .NET, Web API, Entity Framework, Azure SQL Graph DB.
 
-<h2 class="print-break">Exerience cont.</h2>
+<h2 class="print-break">Experience cont.</h2>
 
 **T.K. Maxx, Watford, UK**  
 *April 2016 &ndash; April 2020 (Consultant Software Developer)*  

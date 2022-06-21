@@ -43,8 +43,6 @@ async function generateHtml() {
     const htmlOutput = htmlTemplate.replace(CONTENT_PLACEHOLDER, htmlContent);
     await fs.writeFile(HTML_OUTPUT_PATH, htmlOutput);
     console.log('saved ' + HTML_OUTPUT_PATH);
-    
-    return htmlOutput;
 }
 
 async function copyAssets(){
@@ -54,16 +52,16 @@ async function copyAssets(){
     console.log('copied ' + SOURCE_DIRECTORY + 'assets to ' + OUTPUT_DIRECTORY + 'assets');
 }
 
-async function generatePDF(html) {
-    var htmlWithAbsolutePaths = html
-        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+async function generatePDF() {
 
-    if(process.platform === 'linux') {
-        /* building the PDF version on linux requires locally installed fonts and different scaling */
-        htmlWithAbsolutePaths = htmlWithAbsolutePaths
-        //.replace('<link rel="stylesheet" href="/assets/fonts.css">', '')
+    await createPdfFontStyles();
+
+    let html = await fs.readFile(HTML_OUTPUT_PATH, {encoding:'utf8'})
+
+    let htmlWithAbsolutePaths = html
+        .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'))
+        .replaceAll('/assets/fonts.css','/assets/fonts-pdf.css')
         .replace('assets/print.css', 'assets/print-pdf.css');
-    }
 
     const pdfResource = await new Promise((resolve, reject) => {
         pdf.create(htmlWithAbsolutePaths, PDF_OPTIONS)
@@ -81,6 +79,18 @@ async function generatePDF(html) {
     await updateMetadata(pdfResource.filename, PDF_METADATA);
 }
 
+async function createPdfFontStyles() {
+    const inputPath = path.join(SOURCE_DIRECTORY, 'assets', 'fonts.css');
+    const outputPath = path.join(OUTPUT_DIRECTORY, 'assets', 'fonts-pdf.css');
+
+    let fontStyles = await fs.readFile(inputPath, {encoding:'utf8'});
+
+    let fontStylesWithAbsolutePaths = fontStyles
+        .replace(/\/assets\//g, 'file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
+
+    await fs.writeFile(outputPath, fontStylesWithAbsolutePaths);
+}
+
 async function updateMetadata(filePath, metadata) {
     const exiftoolProcess = new exiftool.ExiftoolProcess(exiftoolBinary);
     await exiftoolProcess.open();
@@ -96,11 +106,11 @@ async function build() {
     
     await clean();
     
-    const htmlOutput = await generateHtml();
+    await generateHtml();
 
     await copyAssets();
 
-    await generatePDF(htmlOutput)
+    await generatePDF()
 }
 
 (async () => {

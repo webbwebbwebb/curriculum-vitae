@@ -20,4 +20,4 @@ echo Cleaning "$target_directory"
 find "$target_directory"  -maxdepth 1 ! -name .htaccess -type f -delete -print
 
 echo Updating "$target_directory" with contents of "$temp_directory"
-cp -r "$temp_directory"/dist/** "$target_directory"/
+cp -r "$temp_directory"/** "$target_directory"/

@@ -2,6 +2,7 @@ const pdf = require('html-pdf');
 const path = require('path');
 const { marked } = require('marked');
 const fs = require('fs-extra');
+const os = require('os');
 const exiftool = require('node-exiftool');
 const exiftoolBinary = require('dist-exiftool');
 
@@ -54,13 +55,12 @@ async function copyAssets(){
 
 async function generatePDF() {
 
-    await createPdfFontStyles();
+    await installFontsLocally()
 
     let html = await fs.readFile(HTML_OUTPUT_PATH, {encoding:'utf8'})
 
     let htmlWithAbsolutePaths = html
         .replace(/href="\/assets\//g, 'href="file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'))
-        .replaceAll('/assets/fonts.css','/assets/fonts-pdf.css')
         .replace('assets/print.css', 'assets/print-pdf.css');
 
     const pdfResource = await new Promise((resolve, reject) => {
@@ -79,16 +79,15 @@ async function generatePDF() {
     await updateMetadata(pdfResource.filename, PDF_METADATA);
 }
 
-async function createPdfFontStyles() {
-    const inputPath = path.join(SOURCE_DIRECTORY, 'assets', 'fonts.css');
-    const outputPath = path.join(OUTPUT_DIRECTORY, 'assets', 'fonts-pdf.css');
-
-    let fontStyles = await fs.readFile(inputPath, {encoding:'utf8'});
-
-    let fontStylesWithAbsolutePaths = fontStyles
-        .replace(/\/assets\//g, 'file:///' + path.join(__dirname, OUTPUT_DIRECTORY, 'assets/'));
-
-    await fs.writeFile(outputPath, fontStylesWithAbsolutePaths);
+async function installFontsLocally() {
+    if(os.platform() === 'linux') {
+        const fontPath = path.join(SOURCE_DIRECTORY, 'assets', 'fonts')
+        const installPath = path.join(os.homedir(), '.fonts', 'truetype');
+        if(!fs.existsSync(installPath)) {
+            await fs.mkdir(installPath, {recursive:true});
+        }
+        await fs.copy(fontPath, installPath);
+    }
 }
 
 async function updateMetadata(filePath, metadata) {

@@ -11,7 +11,7 @@
 *Azure, Git, Bicep, Terraform*  
 
 **Programming Languages**  
-*TypeScript, Javascript, C#, SQL*
+*C#, SQL, TypeScript, Javascript*
 
 **Methodologies**  
 *Agile, Scrum, Test Driven Development, Continuous Integration*
@@ -21,7 +21,7 @@
 *October 2021 &ndash; present (Contract Senior Developer)*
 - Contracted to design and build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
 - Drove quality improvements by mentoring the team on unit testing, code analysis and SQL design.
-- React, .NET 6, Azure functions, Azure Event Hubs, Azure SQL, Terraform.
+- React, .NET 6, Azure functions, Azure Event Hubs, Azure Logic Apps, Azure SQL, Terraform.
 
 **Mylo Limited, London, UK**  
 *August 2020 &ndash; September 2021 (Contract Lead Developer)*

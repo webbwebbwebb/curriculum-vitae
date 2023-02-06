@@ -17,8 +17,12 @@
 *Agile, Scrum, Test Driven Development, Continuous Integration*
 
 ## Experience
+**RTGS.global, London, UK**  
+*February 2023 &ndash; present (Consultant Software Engineer)*
+- Design and build of a cross-border settlement solution.
+
 **Derivco International, London, UK**  
-*October 2021 &ndash; present (Contract Senior Developer)*
+*October 2021 &ndash; January 2023 (Contract Senior Developer)*
 - Contracted to design and build high-volume compliance reporting solutions for the Netherlands and Ontario gaming regulators.
 - Drove quality improvements by mentoring the team on unit testing, code analysis and SQL design.
 - React, .NET 6, Azure functions, Azure Event Hubs, Azure Logic Apps, Azure SQL, Terraform.
@@ -30,8 +34,7 @@
 
 **SERPSketch Ltd, Dorset, UK**  
 *July 2019 &ndash; December 2019 (Consultant Software Developer)*  
-- Contracted to complete the initial build of a web application for a start-up.  
-- SEO performance tracker, enabling the visualisation and reporting of search results over time.
+- Contracted to complete the initial build of an SEO performance tracker for a start-up.  
 - Angular 8, .NET Core, Web API, EF Core, Azure Functions, Stripe Payment integration.
 
 **ELMS Aviation Ltd, Exeter, UK**  

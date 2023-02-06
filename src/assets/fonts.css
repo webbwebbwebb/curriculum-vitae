@@ -1,28 +1,28 @@
 
 @font-face {
-    font-family: 'Vollkorn';
+    font-family: 'Lora';
     font-style: italic;
     font-weight: 400;
-    src: local('Vollkorn Italic'), local('Vollkorn-Italic'), url(/assets/fonts/vollkorn/Vollkorn-Italic.ttf) format('truetype');
+    src: local('Lora Italic'), local('Lora-Italic'), url(/assets/fonts/Lora/Lora-Italic.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'Vollkorn';
+    font-family: 'Lora';
     font-style: italic;
     font-weight: 700;
-    src: local('Vollkorn Bold Italic'), local('Vollkorn-BoldItalic'), url(/assets/fonts/vollkorn/Vollkorn-BoldItalic.ttf) format('truetype');
+    src: local('Lora Bold Italic'), local('Lora-BoldItalic'), url(/assets/fonts/Lora/Lora-BoldItalic.ttf) format('truetype');
 }
   
 @font-face {
-    font-family: 'Vollkorn';
+    font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
-    src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(/assets/fonts/vollkorn/Vollkorn-Regular.ttf) format('truetype');
+    src: local('Lora Regular'), local('Lora-Regular'), url(/assets/fonts/Lora/Lora-Regular.ttf) format('truetype');
 }
   
 @font-face {
-    font-family: 'Vollkorn';
+    font-family: 'Lora';
     font-style: normal;
     font-weight: 700;
-    src: local('Vollkorn Bold'), local('Vollkorn-Bold'), url(/assets/fonts/vollkorn/Vollkorn-Bold.ttf) format('truetype');
+    src: local('Lora Bold'), local('Lora-Bold'), url(/assets/fonts/Lora/Lora-Bold.ttf) format('truetype');
 }
